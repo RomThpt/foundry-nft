@@ -14,9 +14,9 @@ contract TestBasicNft is Test {
         basicNft = deployer.run();
     }
 
-    function testNameIsCorrect() public view{
+    function testNameIsCorrect() public view {
         string memory expectedName = "Dogie";
         string memory actualName = basicNft.name();
-        assertEq(expectedName,actualName);
+        assertEq(expectedName, actualName);
     }
 }
