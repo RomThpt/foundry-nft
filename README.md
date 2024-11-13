@@ -1,66 +1,94 @@
-## Foundry
+# 🐾 Basic NFT Project - Doggie NFTs 🐾
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This Solidity project creates and manages unique NFTs featuring adorable "Doggie" images! Utilizing OpenZeppelin's `ERC721` standard, this smart contract provides functions for minting, deploying, and interacting with NFTs on Ethereum-compatible blockchains.
 
-Foundry consists of:
+## 📑 Table of Contents
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+-   🎨 Features
+-   ⚙️ Setup
+-   🚀 Deployment
+-   🧪 Testing
+-   🔍 Project Details
+-   📜 License
 
-## Documentation
+## 🎨 Features
 
-https://book.getfoundry.sh/
+-   **ERC721 NFT**: Implements a basic `ERC721` contract with the following:
+    -   🖼️ Minting NFTs: Allows users to mint a new NFT with a unique token URI.
+    -   📂 Token URI Storage: Stores metadata for each NFT in a URI mapping.
+-   **Deployment and Interaction Scripts**:
+    -   `DeployBasicNft.s.sol`: Script to deploy the `BasicNft` contract.
+    -   `Interactions.s.sol`: Script to mint an NFT on the deployed contract.
+-   **Unit Testing**:
+    -   ✅ Tests the contract's name, minting functionality, and token ownership.
 
-## Usage
+## ⚙️ Setup
 
-### Build
+To get started with this project, make sure you have the following:
 
-```shell
-$ forge build
+-   **Node.js** and **npm**
+-   **Foundry** development environment
+-   **Forge** for testing and deployments
+-   **OpenZeppelin Contracts** library for `ERC721` standard
+
+**Installation**:
+
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/yourusername/basic-nft-project.git
+    cd basic-nft-project
+    ```
+2. Install dependencies:
+    ```bash
+    forge install OpenZeppelin/openzeppelin-contracts
+    ```
+
+## 🚀 Deployment
+
+### Step 1: Deploy the Contract
+
+To deploy the `BasicNft` contract, run the following command using Foundry:
+
+```bash
+make deploy ARGS="--network sepolia"
 ```
 
-### Test
+### Step 2: Mint an NFT
 
-```shell
-$ forge test
+Use the `Interactions.s.sol` script to mint an NFT on the deployed contract:
+
+```bash
+make mint ARGS="--network sepolia"
 ```
 
-### Format
+## 🧪 Testing
 
-```shell
-$ forge fmt
+To test the project, use the following command:
+
+```bash
+make test
 ```
 
-### Gas Snapshots
+This will run all the tests to ensure the functionality works as expected.
 
-```shell
-$ forge snapshot
-```
+## 🔍 Project Details
 
-### Anvil
+The project includes the following key components:
 
-```shell
-$ anvil
-```
+1. **BasicNft.sol**:
+   This contract allows users to mint ERC721 tokens (NFTs) with unique metadata URIs.
 
-### Deploy
+2. **DeployBasicNft.s.sol**:
+   A script for deploying the `BasicNft` contract to a blockchain.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+3. **TestBasicNft.t.sol**:
+   Contains unit tests for the contract's functionality, such as checking the contract name, minting NFTs, and verifying ownership.
 
-### Cast
+4. **Interactions.s.sol**:
+   A script to mint an NFT on the deployed contract and interact with it.
 
-```shell
-$ cast <subcommand>
-```
+## 📜 License
 
-### Help
+This project is licensed under the MIT License.
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Thanks to Cyfrin-Updraft.
