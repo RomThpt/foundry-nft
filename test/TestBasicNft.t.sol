@@ -35,7 +35,6 @@ contract TestBasicNft is Test {
         assertEq(actualTokenUri, expectedTokenUri, "The token URI for the minted NFT should match the expected URI");
     }
 
-
     function testBalanceBeforeAndAfterMint() public {
         assertEq(basicNft.balanceOf(USER), 0, "USER should have 0 NFTs before minting");
 
